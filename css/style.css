@@ -1,0 +1,978 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap');
+
+/* =====================================
+   1. GLOBAL SETTINGS
+===================================== */
+
+:root {
+  --bg: #ffffff;
+  --surface: #f7f8f6;
+  --surface-dark: #073b3a;
+  --text: #183b38;
+  --muted: #737e7a;
+  --accent: #bd963e;
+  --line: #e8ece8;
+  --max: 1120px;
+  --radius: 12px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "DM Sans", "IBM Plex Sans Arabic", sans-serif;
+  line-height: 1.7;
+}
+
+body[dir="rtl"] {
+  font-family: "IBM Plex Sans Arabic", "DM Sans", sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+button {
+  font: inherit;
+}
+
+main {
+  min-height: 70vh;
+}
+
+.container {
+  width: min(var(--max), calc(100% - 48px));
+  margin-inline: auto;
+}
+
+/* =====================================
+   2. HEADER & NAVIGATION
+===================================== */
+
+.site-header {
+  width: 100%;
+  min-height: 82px;
+  padding: 0 max(calc((100% - var(--max)) / 2), 24px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  background: #fff;
+  border-bottom: 1px solid var(--line);
+  position: relative;
+  z-index: 20;
+}
+
+.logo,
+.brand {
+  font-size: 21px;
+  font-weight: 700;
+  letter-spacing: -1px;
+  color: var(--surface-dark);
+  white-space: nowrap;
+}
+
+.logo span,
+.brand span {
+  color: var(--accent);
+}
+
+.main-nav,
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.main-nav a,
+.nav-links a {
+  color: #59645f;
+  font-size: 13px;
+  font-weight: 500;
+  transition: color .2s ease;
+}
+
+.main-nav a:hover,
+.nav-links a:hover {
+  color: var(--accent);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  width: 100%;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.lang-btn,
+.menu-btn {
+  border: 1px solid var(--line);
+  background: #fff;
+  color: var(--text);
+  padding: 8px 13px;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.menu-btn {
+  display: none;
+}
+
+/* =====================================
+   3. HOME PAGE
+===================================== */
+
+.hero {
+  max-width: 900px;
+  padding: 120px 0 100px;
+}
+
+.eyebrow {
+  color: var(--accent);
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.hero h1 {
+  font-size: clamp(42px, 7vw, 76px);
+  line-height: 1.12;
+  letter-spacing: -3px;
+  margin: 18px 0 24px;
+  color: var(--surface-dark);
+}
+
+.hero h1 .muted {
+  color: #8d9993;
+}
+
+.hero p {
+  color: var(--muted);
+  font-size: 18px;
+  max-width: 700px;
+  margin: 0;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 32px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 13px 21px;
+  border-radius: 4px;
+  background: var(--surface-dark);
+  color: #fff;
+  font-weight: 600;
+  font-size: 13px;
+  transition: .25s;
+}
+
+.btn:hover {
+  background: #105b55;
+  transform: translateY(-2px);
+}
+
+.btn.secondary {
+  background: transparent;
+  border: 1px solid var(--line);
+  color: var(--text);
+}
+
+.btn.secondary:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.section-head {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 28px;
+}
+
+.section-head h2 {
+  font-size: 30px;
+  margin: 0;
+  color: var(--surface-dark);
+}
+
+.section-head p {
+  color: var(--muted);
+  margin: 0;
+  font-size: 14px;
+}
+
+.home-links {
+  padding: 0 0 100px;
+}
+
+.link-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.link-card {
+  border: 1px solid var(--line);
+  background: #fff;
+  padding: 25px;
+  border-radius: var(--radius);
+  transition: .25s;
+}
+
+.link-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-4px);
+}
+
+.link-card small {
+  color: var(--accent);
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.link-card h3 {
+  margin: 9px 0 5px;
+  font-size: 18px;
+  color: var(--surface-dark);
+}
+
+.link-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* =====================================
+   4. PORTFOLIO PAGE
+===================================== */
+
+.page-intro {
+  padding: 85px 0 45px;
+}
+
+.page-intro h1 {
+  font-size: clamp(40px, 6vw, 66px);
+  line-height: 1.1;
+  letter-spacing: -2px;
+  margin: 14px 0;
+  color: var(--surface-dark);
+}
+
+.page-intro p {
+  max-width: 680px;
+  color: var(--muted);
+  font-size: 16px;
+}
+
+.project-list {
+  padding: 10px 0 100px;
+}
+
+.project-row {
+  display: grid;
+  grid-template-columns: minmax(250px, .92fr) 1.08fr;
+  gap: 38px;
+  align-items: center;
+  padding: 35px 0;
+  border-top: 1px solid var(--line);
+}
+
+.project-row:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+.project-thumb {
+  aspect-ratio: 16 / 10;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.thumb-placeholder {
+  font-size: clamp(25px, 4vw, 42px);
+  font-weight: 700;
+  color: var(--surface-dark);
+  letter-spacing: 1px;
+}
+
+.project-meta {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  color: var(--accent);
+  font-size: 11px;
+  letter-spacing: 1.3px;
+  text-transform: uppercase;
+}
+
+.project-copy h2 {
+  font-size: 28px;
+  margin: 10px 0;
+  color: var(--surface-dark);
+}
+
+.project-copy p {
+  color: var(--muted);
+  margin: 0 0 18px;
+  max-width: 580px;
+}
+
+.tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.tag {
+  font-size: 11px;
+  color: #52615b;
+  border: 1px solid var(--line);
+  padding: 5px 10px;
+  border-radius: 30px;
+}
+
+.text-link {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--surface-dark);
+}
+
+.text-link:hover {
+  color: var(--accent);
+}
+
+/* =====================================
+   5. PROJECT CASE STUDY
+===================================== */
+
+.project-page {
+  width: min(1080px, calc(100% - 48px));
+  margin: auto;
+  padding: 35px 0 80px;
+  color: var(--text);
+}
+
+.breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 65px;
+  font-size: 12px;
+  color: #999;
+}
+
+.breadcrumbs a {
+  color: #777;
+  transition: color .2s;
+}
+
+.breadcrumbs a:hover {
+  color: var(--accent);
+}
+
+.project-intro {
+  max-width: 950px;
+  margin-bottom: 55px;
+}
+
+.project-category,
+.section-label {
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  margin-bottom: 17px;
+}
+
+.project-intro h1 {
+  font-size: clamp(45px, 7vw, 82px);
+  letter-spacing: -3px;
+  line-height: 1.08;
+  color: var(--surface-dark);
+  margin: 0 0 25px;
+}
+
+.project-intro h1 span {
+  font-size: .55em;
+  color: var(--accent);
+}
+
+.project-description {
+  max-width: 740px;
+  font-size: 18px;
+  line-height: 1.85;
+  color: var(--muted);
+}
+
+.project-information {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 25px;
+  padding: 27px 0;
+  margin-top: 38px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.project-information div {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.project-information span {
+  font-size: 10px;
+  font-weight: 700;
+  color: #999;
+  letter-spacing: 1.5px;
+}
+
+.project-information strong {
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--surface-dark);
+  overflow-wrap: anywhere;
+}
+
+/* =====================================
+   6. PROJECT COVER
+===================================== */
+
+.project-cover {
+  margin: 50px 0 95px;
+  width: 100%;
+}
+
+.project-cover img {
+  width: 100%;
+  max-height: 620px;
+  object-fit: contain;
+  display: block;
+  border-radius: 9px;
+  background: var(--surface);
+}
+
+.image-caption {
+  font-size: 12px;
+  color: #999;
+  text-align: center;
+  margin-top: 13px;
+}
+
+/* =====================================
+   7. PROJECT CONTENT SECTIONS
+===================================== */
+
+.project-section {
+  max-width: 850px;
+  margin: 0 auto 85px;
+}
+
+.project-section h2 {
+  font-size: clamp(27px, 4vw, 42px);
+  letter-spacing: -1px;
+  line-height: 1.3;
+  color: var(--surface-dark);
+  margin: 0 0 25px;
+}
+
+.project-section > p:not(.section-label) {
+  font-size: 15px;
+  line-height: 1.95;
+  color: #707b75;
+  margin-bottom: 17px;
+}
+
+.project-section ul,
+.project-section ol {
+  padding-left: 23px;
+  margin-top: 22px;
+}
+
+.project-section li {
+  font-size: 15px;
+  line-height: 1.9;
+  color: #707b75;
+  padding-left: 7px;
+  margin-bottom: 10px;
+}
+
+.project-section li strong {
+  color: var(--surface-dark);
+}
+
+/* =====================================
+   8. HIGHLIGHTS
+===================================== */
+
+.project-highlights {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 17px;
+  margin-top: 32px;
+}
+
+.project-highlights article {
+  min-width: 0;
+  padding: 27px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: #fff;
+  transition: .25s ease;
+}
+
+.project-highlights article:hover {
+  transform: translateY(-4px);
+  border-color: #d6ad45;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, .04);
+}
+
+.project-highlights article > span {
+  display: block;
+  font-size: 11px;
+  color: var(--accent);
+  font-weight: 700;
+  margin-bottom: 17px;
+}
+
+.project-highlights h3 {
+  color: var(--surface-dark);
+  font-size: 17px;
+  margin: 0 0 10px;
+}
+
+.project-highlights p {
+  color: #858d88;
+  font-size: 13px;
+  line-height: 1.8;
+  margin: 0;
+}
+
+/* =====================================
+   9. TECHNOLOGIES
+===================================== */
+
+.technology-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.technology-list span {
+  padding: 9px 15px;
+  background: #f1f5f2;
+  color: var(--surface-dark);
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* =====================================
+   10. ARCHITECTURE
+===================================== */
+
+.architecture-diagram {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  background: var(--surface-dark);
+  color: #e7d39b;
+  padding: 30px;
+  margin: 28px 0;
+  border-radius: 8px;
+  font-family: Consolas, monospace;
+  font-size: 13px;
+  line-height: 1.9;
+  white-space: pre;
+}
+
+/* =====================================
+   11. PROJECT GALLERY
+===================================== */
+
+.project-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+  margin-top: 30px;
+}
+
+.project-gallery figure {
+  min-width: 0;
+  margin: 0;
+}
+
+.project-gallery img {
+  display: block;
+  width: 100%;
+  max-height: 430px;
+  object-fit: contain;
+  border-radius: 8px;
+  background: var(--surface);
+}
+
+.project-gallery figcaption {
+  font-size: 12px;
+  color: #858d88;
+  margin-top: 12px;
+}
+
+/* =====================================
+   12. PROJECT LINKS
+===================================== */
+
+.project-links-section {
+  padding: 38px;
+  background: var(--surface);
+  border-radius: 9px;
+}
+
+.project-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  align-items: center;
+  margin-top: 24px;
+}
+
+.project-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 23px;
+  background: var(--surface-dark);
+  color: #fff;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 600;
+  transition: .25s;
+}
+
+.project-button:hover {
+  background: #105b55;
+  transform: translateY(-2px);
+}
+
+.project-text-link {
+  color: var(--surface-dark);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.project-text-link:hover {
+  color: var(--accent);
+}
+
+/* =====================================
+   13. NEXT PROJECT
+===================================== */
+
+.next-project {
+  padding: 38px 0;
+  border-top: 1px solid var(--line);
+}
+
+.next-project p {
+  font-size: 11px;
+  color: #999;
+  margin-bottom: 12px;
+}
+
+.next-project a {
+  font-size: clamp(26px, 4vw, 42px);
+  font-weight: 700;
+  color: var(--surface-dark);
+  transition: color .2s;
+}
+
+.next-project a:hover {
+  color: var(--accent);
+}
+
+/* =====================================
+   14. FOOTER
+===================================== */
+
+.site-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 28px max(calc((100% - var(--max)) / 2), 24px);
+  border-top: 1px solid var(--line);
+  color: #858d88;
+  font-size: 12px;
+  background: #fff;
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+.site-footer a {
+  color: var(--surface-dark);
+  font-weight: 600;
+}
+
+.site-footer a:hover {
+  color: var(--accent);
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.note {
+  border: 1px dashed #cbd5ce;
+  border-radius: 9px;
+  padding: 16px;
+  color: var(--muted);
+  font-size: 13px;
+  margin-top: 18px;
+}
+
+/* =====================================
+   15. RTL SUPPORT
+===================================== */
+
+[dir="rtl"] .project-row {
+  direction: rtl;
+}
+
+[dir="rtl"] .project-section ul,
+[dir="rtl"] .project-section ol {
+  padding-left: 0;
+  padding-right: 23px;
+}
+
+[dir="rtl"] .project-section li {
+  padding-left: 0;
+  padding-right: 7px;
+}
+
+/* =====================================
+   16. RESPONSIVE DESIGN
+===================================== */
+
+@media (max-width: 900px) {
+  .project-information {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .project-page {
+    width: calc(100% - 40px);
+  }
+}
+
+@media (max-width: 760px) {
+  .container {
+    width: calc(100% - 32px);
+  }
+
+  .site-header {
+    min-height: 70px;
+    padding-inline: 20px;
+  }
+
+  .main-nav,
+  .nav-links {
+    gap: 16px;
+  }
+
+  .main-nav a,
+  .nav-links a {
+    font-size: 12px;
+  }
+
+  .menu-btn {
+    display: inline-flex;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .nav-links.open {
+    display: flex;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: #fff;
+    padding: 20px 24px;
+    flex-direction: column;
+    align-items: flex-start;
+    border-bottom: 1px solid var(--line);
+    z-index: 30;
+  }
+
+  .hero {
+    padding: 75px 0 65px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .link-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-head {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .page-intro {
+    padding: 60px 0 30px;
+  }
+
+  .project-row {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 25px 0;
+  }
+
+  .project-copy h2 {
+    font-size: 24px;
+  }
+
+  .project-page {
+    width: calc(100% - 36px);
+    padding-top: 25px;
+  }
+
+  .breadcrumbs {
+    margin-bottom: 42px;
+  }
+
+  .project-intro h1 {
+    letter-spacing: -2px;
+  }
+
+  .project-description {
+    font-size: 16px;
+  }
+
+  .project-information {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px 15px;
+  }
+
+  .project-cover {
+    margin: 35px 0 65px;
+  }
+
+  .project-section {
+    margin-bottom: 65px;
+  }
+
+  .project-highlights,
+  .project-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .project-links-section {
+    padding: 25px 20px;
+  }
+
+  .site-footer {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-nav {
+    gap: 11px;
+  }
+
+  .main-nav a {
+    font-size: 11px;
+  }
+
+  .project-information {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .project-information strong {
+    font-size: 12px;
+  }
+
+  .project-intro h1 {
+    font-size: 43px;
+  }
+
+  .project-section h2 {
+    font-size: 27px;
+  }
+
+  .project-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .project-button {
+    width: 100%;
+  }
+
+  .architecture-diagram {
+    padding: 18px;
+    font-size: 11px;
+  }
+
+  .project-section li {
+    font-size: 14px;
+  }
+}

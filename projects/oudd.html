@@ -1,0 +1,231 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="عُضد (OUDD) — A digital volunteering platform developed by Khedidja Mortet.">
+  <title>عضد (OUDD) — Khedidja Mortet</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/script.js" defer></script>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="../index.html" class="logo">KM<span>.</span></a>
+  <nav class="main-nav">
+    <a href="../index.html">Home</a>
+    <a href="../portfolio/index.html">Work</a>
+    <a href="../index.html#about">About</a>
+    <a href="../index.html#contact">Contact</a>
+  </nav>
+</header>
+
+<main class="project-page">
+
+  <div class="breadcrumbs">
+    <a href="../index.html">Home</a> /
+    <a href="../portfolio/index.html">Work</a> /
+    <span>عضد      </span>
+  </div>
+
+  <section class="project-intro">
+    <p class="project-category">Digital Volunteering Platform</p>
+    <h1>عضد     <span>(OUDD)</span></h1>
+
+    <p class="project-description">
+      A digital volunteering platform designed to connect volunteers,
+      organizing committees and community initiatives through a
+      centralized environment for campaign management, participation
+      tracking and digital volunteer identification.
+    </p>
+
+    <div class="project-information">
+      <div><span>ROLE</span><strong>Platform Design & Development</strong></div>
+      <div><span>YEAR</span><strong>2026</strong></div>
+      <div><span>TYPE</span><strong>Web Platform</strong></div>
+      <div><span>STACK</span><strong>JavaScript · Firebase · Firestore · Cloudflare Workers</strong></div>
+    </div>
+  </section>
+
+  <section class="project-section">
+    <p class="section-label">01 — Highlights</p>
+    <h2>One platform for the volunteering journey.</h2>
+
+    <div class="project-highlights">
+      <article>
+        <span>01</span>
+        <h3>Campaign Management</h3>
+        <p>Digital organization and management of volunteering campaigns.</p>
+      </article>
+      <article>
+        <span>02</span>
+        <h3>Volunteer Profiles</h3>
+        <p>Centralized volunteer information and participation records.</p>
+      </article>
+      <article>
+        <span>03</span>
+        <h3>Digital Volunteer Card</h3>
+        <p>A digital card associated with verified participation, issued after the required participation threshold.</p>
+      </article>
+      <article>
+        <span>04</span>
+        <h3>Volunteer Directory</h3>
+        <p>A directory that supports access to volunteer information and CVs according to consent settings.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="project-section project-links-section">
+    <p class="section-label">02 — Links</p>
+    <h2>Explore the platform.</h2>
+    <p>
+      The live version is available online. Visit the platform to
+      explore its interface and available features.
+    </p>
+    <div class="project-actions">
+      <a class="project-button" href="https://oud-platform-613fe.web.app"
+         target="_blank" rel="noopener noreferrer">Visit Live Platform ↗</a>
+      <a class="project-text-link" href="https://github.com/Mortetkhedidja/OUD"
+         target="_blank" rel="noopener noreferrer">GitHub Repository ↗</a>
+    </div>
+  </section>
+
+  <section class="project-section">
+    <p class="section-label">03 — The Problem</p>
+    <h2>Volunteering needs more than disconnected communication.</h2>
+    <p>
+      Organizing volunteering activities involves several connected
+      tasks: publishing initiatives, receiving registrations,
+      coordinating participants and keeping track of their involvement.
+    </p>
+    <p>
+      When these activities are managed through separate channels,
+      information can become difficult to organize and follow.
+      عُضد was developed to bring these activities into one digital
+      environment.
+    </p>
+  </section>
+
+  <section class="project-section">
+    <p class="section-label">04 — Requirements</p>
+    <h2>What the platform needs to support.</h2>
+    <ul>
+      <li>Provide an organized environment for volunteering campaigns.</li>
+      <li>Maintain volunteer profiles and participation information.</li>
+      <li>Support committee and administrator workflows.</li>
+      <li>Associate digital volunteer cards with verified participation.</li>
+      <li>Allow access to CV information according to volunteer consent.</li>
+      <li>Provide a responsive interface suitable for different devices.</li>
+    </ul>
+  </section>
+
+  <section class="project-section">
+    <p class="section-label">05 — My Role</p>
+    <h2>From platform structure to implementation.</h2>
+    <p>
+      I worked on the design and development of the platform,
+      including its interface, application workflows and Firebase
+      integration. The work involved organizing the different
+      user-facing areas and connecting them to the application's
+      data and authentication services.
+    </p>
+    <p>
+      I also worked on the digital card workflow, consent-related
+      CV access and email notification integration.
+    </p>
+  </section>
+
+  <section class="project-section">
+    <p class="section-label">06 — Technical Challenges</p>
+    <h2>Connecting different roles and workflows.</h2>
+
+    <ol>
+      <li><strong>Role separation:</strong> organizing access for administrators, committees and volunteers.</li>
+      <li><strong>Participation verification:</strong> ensuring that digital card issuance is associated with the required verified participation.</li>
+      <li><strong>Data access:</strong> handling volunteer information and CV visibility according to consent.</li>
+      <li><strong>Email integration:</strong> connecting application events to an external email delivery service.</li>
+      <li><strong>Responsive experience:</strong> making the platform usable across desktop and mobile screens.</li>
+    </ol>
+  </section>
+
+  <section class="project-section">
+    <p class="section-label">07 — Architecture & Choices</p>
+    <h2>A web platform supported by Firebase services.</h2>
+
+    <pre class="architecture-diagram">
+Web Interface
+     |
+     v
+JavaScript Application
+     |
+     +------ Firebase Authentication
+     |
+     +------ Cloud Firestore
+     |
+     +------ Cloudflare Worker
+                 |
+                 v
+             Email Service
+    </pre>
+
+    <ul>
+      <li><strong>JavaScript, HTML and CSS:</strong> building the web interface and application interactions.</li>
+      <li><strong>Firebase Authentication:</strong> supporting user authentication.</li>
+      <li><strong>Cloud Firestore:</strong> storing and organizing application data.</li>
+      <li><strong>Cloudflare Workers:</strong> handling the external email integration.</li>
+    </ul>
+  </section>
+
+  <section class="project-section">
+    <p class="section-label">08 — Implementation Approach</p>
+    <h2>Building the platform in connected modules.</h2>
+    <ol>
+      <li>Organizing the application pages and user-facing workflows.</li>
+      <li>Connecting authentication and database services.</li>
+      <li>Implementing campaign and volunteer management interfaces.</li>
+      <li>Developing the participation-based digital card workflow.</li>
+      <li>Integrating email notifications and consent-related document access.</li>
+      <li>Deploying the platform for online access and testing.</li>
+    </ol>
+  </section>
+
+  <section class="project-section">
+    <p class="section-label">09 — Results</p>
+    <h2>An accessible online volunteering platform.</h2>
+    <p>
+      The project resulted in a deployed web platform that brings
+      volunteering campaigns, volunteer information, participation
+      records and digital card functionality into one environment.
+    </p>
+    <p>
+      The live deployment and source code are available through
+      the project links above.
+    </p>
+  </section>
+
+  <section class="project-section">
+    <p class="section-label">10 — Lessons Learned</p>
+    <h2>What this project taught me.</h2>
+    <ul>
+      <li>Multi-role platforms require clear access rules and carefully organized workflows.</li>
+      <li>Personal information should be shared according to explicit consent.</li>
+      <li>External services need reliable integration boundaries.</li>
+      <li>Deploying early makes it easier to test the experience beyond the development environment.</li>
+    </ul>
+  </section>
+
+  <section class="next-project">
+    <p>Next Project</p>
+    <a href="medconnect.html">MedConnect ↗</a>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <p>© 2026 Khedidja Mortet. All rights reserved.</p>
+  <a href="mailto:mortetkhedidja@gmail.com">Get in touch ↗</a>
+</footer>
+
+</body>
+</html>
